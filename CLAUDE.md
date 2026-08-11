@@ -27,6 +27,13 @@ build command **empty**, build output directory **`/`**.
   It sets the security headers, the 1-year immutable cache on `/images/*` and `/videos/*`,
   and `noindex` on the internal handbook. Moving the site into a subdirectory silently
   disables all of it.
+- **Replacing an image? Bump its `?v=` query too.** `_headers` serves `/images/*` and
+  `/videos/*` with `max-age=31536000, immutable`, so a browser that has seen the old file
+  keeps it for a year and never asks again. Overwriting the file is not enough — the
+  reference must change. `slv-logo.png` and `favicon.png` are at `?v=2`; raise the number
+  in **every** page that links them (`index.html`, `privacy.html`, `404.html`) plus the
+  absolute `og:image` and the JSON-LD `logo`. Verify with a cache-busted fetch, not a
+  normal reload, because a reload can be served from cache.
 - **Relative paths only** (`images/foo.jpg`, not `/images/foo.jpg` or a full URL) — this is
   how every existing reference is written.
 - **Comments are bilingual**, Lao first then English. Match that when editing.
