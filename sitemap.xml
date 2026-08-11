@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ==========================================================================
-     ໂດເມນຍັງບໍ່ທັນຕັ້ງ — sitemap ຈຶ່ງຍັງຫວ່າງໄວ້ກ່ອນ
-     ມາດຕະຖານ sitemap ບັງຄັບໃຫ້ <loc> ເປັນ URL ເຕັມ ໃສ່ເສັ້ນທາງແບບຫຍໍ້ບໍ່ໄດ້
+     ໂດເມນປັດຈຸບັນ: https://silavanuxoservice.pages.dev
+     ໃສ່ສະເພາະໜ້າທີ່ຢາກໃຫ້ຂຶ້ນຜົນຄົ້ນຫາ — ບໍ່ໃສ່ 404.html ແລະ README-TH.md
+     ຖ້າປ່ຽນໂດເມນໃໝ່ ໃຫ້ແກ້ <loc> ລຸ່ມນີ້ ພ້ອມກັບແຖວ Sitemap: ໃນ robots.txt ນຳ
 
-     ວິທີເປີດໃຊ້: ເອົາ 2 ບລັອກລຸ່ມນີ້ອອກຈາກ comment ແລ້ວປ່ຽນ example.la ເປັນໂດເມນຈິງ
-     ພ້ອມກັບເປີດແຖວ Sitemap: ໃນ robots.txt ນຳ
-
-     Domain not set yet, so this sitemap is intentionally empty.
-     The sitemap protocol requires an absolute URL in <loc> — a relative path is not allowed.
-     To switch it on: uncomment the two blocks below, replace example.la with the real
-     domain, and uncomment the Sitemap: line in robots.txt as well.
+     Current domain: https://silavanuxoservice.pages.dev
+     Only indexable pages are listed — 404.html and README-TH.md are left out.
+     If the domain changes, update the <loc> values below and the Sitemap: line
+     in robots.txt as well.
 ========================================================================== -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<!--
   <url>
-    <loc>https://example.la/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://silavanuxoservice.pages.dev/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://example.la/privacy.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://silavanuxoservice.pages.dev/privacy.html</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
--->
 </urlset>

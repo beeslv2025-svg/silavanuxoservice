@@ -5,9 +5,6 @@ Allow: /
 # internal handbook — keep it out of search results
 Disallow: /README-TH.md
 
-# ໂດເມນຍັງບໍ່ທັນຕັ້ງ — ແຖວ Sitemap ຕ້ອງເປັນ URL ເຕັມ ຈຶ່ງປິດໄວ້ກ່ອນ
-# ຕອນມີໂດເມນແລ້ວ ໃຫ້ເປີດແຖວລຸ່ມນີ້ ແລະ ປ່ຽນ example.la ເປັນໂດເມນຈິງ
-# ພ້ອມກັບເປີດ 2 ບລັອກໃນ sitemap.xml ນຳ
-# Domain not set yet. The Sitemap directive needs an absolute URL, so it is off for now —
-# uncomment it with the real domain, and uncomment the blocks in sitemap.xml too.
-# Sitemap: https://example.la/sitemap.xml
+# ຖ້າປ່ຽນໂດເມນໃໝ່ ໃຫ້ແກ້ແຖວລຸ່ມນີ້ ພ້ອມກັບ <loc> ໃນ sitemap.xml ນຳ
+# If the domain changes, update the line below and the <loc> values in sitemap.xml too.
+Sitemap: https://silavanuxoservice.pages.dev/sitemap.xml
