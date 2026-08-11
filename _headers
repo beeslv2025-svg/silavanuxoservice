@@ -1,0 +1,23 @@
+# Cloudflare Pages – HTTP headers
+# ໄຟລ໌ນີ້ Cloudflare Pages ອ່ານເອງອັດຕະໂນມັດ ບໍ່ຕ້ອງຕັ້ງຄ່າຫຍັງເພີ່ມ
+# This file is read automatically by Cloudflare Pages. No dashboard setup needed.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# ຮູບ ແລະ ວິດີໂອ ບໍ່ຄ່ອຍປ່ຽນ → ໃຫ້ເບຣົາເຊີເກັບໄວ້ດົນ (ໂຫຼດໄວຂຶ້ນຫຼາຍ)
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ຄູ່ມືພາຍໃນ — ບອກເຄື່ອງຄົ້ນຫາບໍ່ໃຫ້ເກັບເຂົ້າດັດຊະນີ
+# ໝາຍເຫດ: ຍັງເປີດອ່ານໄດ້ຢູ່ ຖ້າຮູ້ທີ່ຢູ່ ຖ້າຢາກເຊື່ອງແທ້ໆ ຢ່າອັບໄຟລ໌ນີ້ຂຶ້ນເວັບ
+# Internal handbook — tells crawlers not to index it. It is still readable by anyone
+# who knows the URL; to hide it completely, keep the file out of the upload folder.
+/README-TH.md
+  X-Robots-Tag: noindex, nofollow

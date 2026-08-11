@@ -1,0 +1,13 @@
+# ໃຫ້ໄຟລ໌ຂໍ້ຄວາມເກັບເປັນ LF ໃນ repo ສະເໝີ (ກັນບັນຫາ Windows/Linux ຕ່າງກັນ)
+# Store text files with LF in the repo — keeps Windows and the Linux build server in sync.
+* text=auto eol=lf
+
+# ໄຟລ໌ຮູບ/ວິດີໂອ/ເອກະສານ ເປັນ binary ຫ້າມ Git ແກ້ໄຂ
+# Binary assets — Git must never rewrite these.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.mp4   binary
+*.pdf   binary
