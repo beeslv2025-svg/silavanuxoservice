@@ -28,9 +28,11 @@ a.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-ra
 .svg-ic.solid{fill:currentColor;stroke:none}
 </style>
 <script>
-(function(){try{var s=localStorage.getItem('slv-theme');
- var d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
- if(d)document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+/* ຄ່າຕັ້ງຕົ້ນເປັນແຈ້ງ ມືດສະເພາະຜູ້ໃຊ້ເລືອກເອງ (ຄືກັບໜ້າຫຼັກ)
+   Light by default, dark only if the visitor chose it — same as the main page. */
+(function(){try{
+ if(localStorage.getItem('slv-theme') === 'dark')
+   document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 </script>
 </head>
 <body>

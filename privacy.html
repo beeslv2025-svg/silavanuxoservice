@@ -39,10 +39,11 @@ html[data-lang="vi"] :is([lang="lo"],[lang="en"],[lang="zh"],[lang="th"]){displa
 .lang-switch button.active{background:var(--bg);color:var(--head)}
 </style>
 <script>
-/* ໃຊ້ theme ດຽວກັບໜ້າຫຼັກ / share the theme chosen on the main page */
-(function(){try{var s=localStorage.getItem('slv-theme');
- var d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
- if(d)document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+/* ໃຊ້ theme ດຽວກັບໜ້າຫຼັກ — ຄ່າຕັ້ງຕົ້ນເປັນແຈ້ງ ມືດສະເພາະຜູ້ໃຊ້ເລືອກເອງ
+   Same rule as the main page: light by default, dark only if the visitor chose it. */
+(function(){try{
+ if(localStorage.getItem('slv-theme') === 'dark')
+   document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 </script>
 </head>
 <body>

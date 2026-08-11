@@ -547,14 +547,17 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 <script>
-/* ໃສ່ theme ກ່ອນໜ້າຈະແຕ້ມ ເພື່ອບໍ່ໃຫ້ຈໍກະພິບຂາວ
-   Apply the theme before first paint so there is no white flash. */
+/* ໃສ່ theme ກ່ອນໜ້າຈະແຕ້ມ ເພື່ອບໍ່ໃຫ້ຈໍກະພິບ
+   ຄ່າຕັ້ງຕົ້ນເປັນໂໝດແຈ້ງສະເໝີ ເຖິງເຄື່ອງຜູ້ໃຊ້ຈະຕັ້ງເປັນໂໝດມືດກໍຕາມ
+   ຈະມືດໄດ້ກໍຕໍ່ເມື່ອຜູ້ໃຊ້ກົດປຸ່ມສະຫຼັບເອງເທົ່ານັ້ນ
+
+   Apply the theme before first paint so there is no flash.
+   Light is the default for every first visit, regardless of the device setting —
+   dark only ever comes from the visitor pressing the toggle. */
 (function(){
   try{
-    var saved = localStorage.getItem('slv-theme');
-    var dark  = saved ? saved === 'dark'
-                      : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if(dark) document.documentElement.setAttribute('data-theme','dark');
+    if(localStorage.getItem('slv-theme') === 'dark')
+      document.documentElement.setAttribute('data-theme','dark');
   }catch(e){}
 })();
 </script>
@@ -1384,7 +1387,6 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
 (function(){
   var root = document.documentElement;
   var btn  = document.getElementById('themeToggle');
-  var mq   = window.matchMedia('(prefers-color-scheme: dark)');
 
   function paint(){
     var dark = root.getAttribute('data-theme') === 'dark';
@@ -1408,15 +1410,10 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
     paint();
   });
 
-  /* ຖ້າຜູ້ໃຊ້ຍັງບໍ່ເຄີຍກົດເລືອກເອງ ໃຫ້ຕາມການຕັ້ງຄ່າຂອງເຄື່ອງ */
-  mq.addEventListener('change', function(e){
-    var saved = null;
-    try{ saved = localStorage.getItem('slv-theme'); }catch(err){}
-    if(saved) return;
-    if(e.matches) root.setAttribute('data-theme','dark');
-    else          root.removeAttribute('data-theme');
-    paint();
-  });
+  /* ບໍ່ຕາມການຕັ້ງຄ່າຂອງເຄື່ອງອີກຕໍ່ໄປ — ຖ້າຕາມ ຜູ້ໃຊ້ທີ່ເຄື່ອງເປັນໂໝດມືດ
+     ຈະຖືກສະຫຼັບເປັນມືດກາງຄັນ ທັ້ງທີ່ຄ່າຕັ້ງຕົ້ນຄວນເປັນແຈ້ງ
+     No longer follows the device setting: doing so would flip a visitor to dark
+     mid-session and undo the light default. Only the toggle changes the theme. */
 
   paint();
 })();
