@@ -21,3 +21,8 @@
 # who knows the URL; to hide it completely, keep the file out of the upload folder.
 /README-TH.md
   X-Robots-Tag: noindex, nofollow
+
+# ບັນທຶກສຳລັບຜູ້ຊ່ວຍ AI — ບໍ່ຕ້ອງໃຫ້ຂຶ້ນຜົນຄົ້ນຫາ
+# Notes for the AI assistant — keep it out of search results too.
+/CLAUDE.md
+  X-Robots-Tag: noindex, nofollow

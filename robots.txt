@@ -5,6 +5,10 @@ Allow: /
 # internal handbook — keep it out of search results
 Disallow: /README-TH.md
 
+# ບັນທຶກສຳລັບຜູ້ຊ່ວຍ AI
+# notes for the AI assistant
+Disallow: /CLAUDE.md
+
 # ຖ້າປ່ຽນໂດເມນໃໝ່ ໃຫ້ແກ້ແຖວລຸ່ມນີ້ ພ້ອມກັບ <loc> ໃນ sitemap.xml ນຳ
 # If the domain changes, update the line below and the <loc> values in sitemap.xml too.
 Sitemap: https://silavanuxoservice.pages.dev/sitemap.xml
