@@ -166,6 +166,9 @@ html[data-lang="vi"] :is([lang="lo"],[lang="en"],[lang="zh"],[lang="th"]){displa
    spacing the old Gmail mark used so the bar does not shift. */
 .ic-inline{width:17px;height:17px;vertical-align:-3px;margin-right:7px}
 .ic-inline-lg{width:20px;height:20px;vertical-align:-4px}
+/* ໄອຄອນປຸ່ມສະຫຼັບໂໝດ — .ti ເປັນ flex ຈຶ່ງບໍ່ຕ້ອງໃຊ້ vertical-align
+   Theme-toggle icon; .ti is a flex box, so no vertical-align needed. */
+.ic-theme{width:17px;height:17px}
 .lang-switch{display:flex;flex-wrap:wrap;gap:2px;background:rgba(255,255,255,.12);border-radius:20px;padding:3px}
 .lang-switch button{border:0;background:transparent;color:#cfe4f5;font-family:var(--font);font-size:.8rem;font-weight:600;padding:3px 9px;border-radius:16px;cursor:pointer;white-space:nowrap}
 .lang-switch button.active{background:#fff;color:#084a7c}
@@ -592,7 +595,7 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
     </div>
     <div class="tb-right">
       <button type="button" id="themeToggle" class="theme-btn" aria-pressed="false">
-        <span class="ti" aria-hidden="true"><svg class="svg-ic" width="15" height="15" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="ti" aria-hidden="true"><img class="ic-img ic-theme" src="images/icons/theme-dark.png" width="17" height="17" alt="" decoding="async"></span>
         <span class="tl" lang="lo">ໂໝດມືດ</span><span class="tl" lang="en">Dark</span><span class="tl" lang="zh">深色</span><span class="tl" lang="th">โหมดมืด</span><span class="tl" lang="vi">Nền tối</span>
       </button>
       <div class="lang-switch" role="group" aria-label="Language">
@@ -1410,16 +1413,26 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
   function paint(){
     var dark = root.getAttribute('data-theme') === 'dark';
     btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    /* ໄອຄອນຕາເວັນ / ດວງເດືອນ ເປັນ SVG ຝັງໃນໜ້າ (ບໍ່ໃຊ້ emoji)
-       inline sun / moon SVG — no emoji, so it renders the same everywhere */
-    btn.querySelector('.ti').innerHTML = dark
-      ? '<svg class="svg-ic" width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/>'
-        + '<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>'
-      : '<svg class="svg-ic" width="15" height="15" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    /* ປຸ່ມສະແດງໄອຄອນຂອງໂໝດທີ່ຈະສະຫຼັບໄປຫາ: ຢູ່ໂໝດມືດໃຫ້ຂຶ້ນຕາເວັນ, ຢູ່ໂໝດແຈ້ງໃຫ້ຂຶ້ນດວງເດືອນ
+       ປ່ຽນແຕ່ src ບໍ່ຂຽນ innerHTML ໃໝ່ ຮູບຈຶ່ງບໍ່ກະພິບຕອນກົດ
+       The button shows the mode you would switch to: a sun while dark, a moon
+       while light. Only src changes — rewriting innerHTML would make the icon
+       flash on every toggle as the browser re-fetches and re-decodes it. */
+    var ti = btn.querySelector('.ti img');
+    ti.setAttribute('src', dark ? 'images/icons/theme-light.png'
+                                : 'images/icons/theme-dark.png');
     var lbl = btn.querySelectorAll('.tl');
     lbl[0].textContent = dark ? 'ໂໝດແຈ້ງ' : 'ໂໝດມືດ';
     lbl[1].textContent = dark ? 'Light'   : 'Dark';
   }
+
+  /* ໂຫຼດໄອຄອນອີກດ້ານໄວ້ລ່ວງໜ້າ ຕອນກົດສະຫຼັບຄັ້ງທຳອິດຈຶ່ງບໍ່ມີຊ່ອງຫວ່າງ
+     Warm the other icon so the first toggle does not show an empty slot. */
+  (function(){
+    var other = root.getAttribute('data-theme') === 'dark'
+      ? 'images/icons/theme-dark.png' : 'images/icons/theme-light.png';
+    new Image().src = other;
+  })();
 
   btn.addEventListener('click', function(){
     var dark = root.getAttribute('data-theme') === 'dark';
