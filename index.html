@@ -161,6 +161,11 @@ html[data-lang="vi"] :is([lang="lo"],[lang="en"],[lang="zh"],[lang="th"]){displa
 .ic-raster{background:#fff !important;box-shadow:0 8px 20px rgba(15,23,42,.16) !important}
 [data-theme="dark"] .ic-raster{background:#16212e !important}
 .ns-pdf-ic{flex:none;vertical-align:-.2em}
+/* ໄອຄອນເບີໂທ ແລະ ອີເມວ ຢູ່ແຖບເທິງ ແລະ ເມນູຊ້າຍ — ໃຊ້ຂະໜາດ/ໄລຍະຫ່າງເທົ່າ .ic-gmail ເດີມ
+   Phone and e-mail icons in the top bar and left menu, kept at the same size and
+   spacing the old Gmail mark used so the bar does not shift. */
+.ic-inline{width:17px;height:17px;vertical-align:-3px;margin-right:7px}
+.ic-inline-lg{width:20px;height:20px;vertical-align:-4px}
 .lang-switch{display:flex;flex-wrap:wrap;gap:2px;background:rgba(255,255,255,.12);border-radius:20px;padding:3px}
 .lang-switch button{border:0;background:transparent;color:#cfe4f5;font-family:var(--font);font-size:.8rem;font-weight:600;padding:3px 9px;border-radius:16px;cursor:pointer;white-space:nowrap}
 .lang-switch button.active{background:#fff;color:#084a7c}
@@ -582,8 +587,8 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
 <div class="topbar">
   <div class="container">
     <div class="tb-left">
-      <a href="tel:+8562028492246"><svg class="svg-ic lead" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+856 20 28492246</a>
-      <a href="mailto:phonesaibobs5@gmail.com"><svg class="ic-gmail" viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="#fff" d="M4.5 39h39V8.5h-39z"/><path fill="#4285f4" d="M4.5 39h7.2V21.6L1.5 14v21.5C1.5 37.4 2.8 39 4.5 39z"/><path fill="#34a853" d="M36.3 39h7.2c1.7 0 3-1.6 3-3.5V14l-10.2 7.6V39z"/><path fill="#fbbc04" d="M36.3 8.5v13.1L46.5 14v-4c0-3.6-4.1-5.7-7-3.5l-3.2 2z"/><path fill="#ea4335" d="M11.7 21.6V8.5L24 17.8l12.3-9.3v13.1L24 30.9z"/><path fill="#c5221f" d="M1.5 10v4l10.2 7.6V8.5l-3.2-2C5.6 4.3 1.5 6.4 1.5 10z"/></svg>phonesaibobs5@gmail.com</a>
+      <a href="tel:+8562028492246"><img class="ic-img ic-inline" src="images/icons/phone-whatsapp.png" width="17" height="17" alt="" decoding="async">+856 20 28492246</a>
+      <a href="mailto:phonesaibobs5@gmail.com"><img class="ic-img ic-inline" src="images/icons/email.png" width="17" height="17" alt="" decoding="async">phonesaibobs5@gmail.com</a>
     </div>
     <div class="tb-right">
       <button type="button" id="themeToggle" class="theme-btn" aria-pressed="false">
@@ -704,9 +709,9 @@ header.scrolled{box-shadow:0 8px 28px rgba(8,74,124,.14)}
           <li><a href="#clients"><span lang="lo">ພື້ນທີ່ໃຫ້ບໍລິການ</span><span lang="en">Areas We Serve</span><span lang="zh">服务区域</span><span lang="th">พื้นที่ให้บริการ</span><span lang="vi">Khu vực phục vụ</span></a></li>
           <li><a href="#nra"><span lang="lo">ໃບຢັ້ງຢືນ ແລະ ການຮັບຮອງ</span><span lang="en">Accreditation</span><span lang="zh">资质认证</span><span lang="th">ใบรับรองและการรับรอง</span><span lang="vi">Chứng nhận</span></a></li>
           <li><a href="http://www.nra.gov.la/" target="_blank" rel="noopener"><span lang="lo">ເວັບໄຊ ຄຊກລ</span><span lang="en">NRA Website</span><span lang="zh">NRA 官网</span><span lang="th">เว็บไซต์ NRA</span><span lang="vi">Website NRA</span><svg class="svg-ic trail" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></li>
-          <li><a class="hot" href="tel:+8562028492246"><svg class="svg-ic lead" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>020 2849 2246</a></li>
+          <li><a class="hot" href="tel:+8562028492246"><img class="ic-img ic-inline ic-inline-lg" src="images/icons/phone-whatsapp.png" width="17" height="17" alt="" decoding="async">020 2849 2246</a></li>
           <li><a class="hot" href="https://wa.me/8562028492246" target="_blank" rel="noopener"><svg class="svg-ic solid lead" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>WhatsApp</a></li>
-          <li><a href="mailto:phonesaibobs5@gmail.com"><svg class="ic-gmail ic-gmail-lg" viewBox="0 0 48 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="#fff" d="M4.5 39h39V8.5h-39z"/><path fill="#4285f4" d="M4.5 39h7.2V21.6L1.5 14v21.5C1.5 37.4 2.8 39 4.5 39z"/><path fill="#34a853" d="M36.3 39h7.2c1.7 0 3-1.6 3-3.5V14l-10.2 7.6V39z"/><path fill="#fbbc04" d="M36.3 8.5v13.1L46.5 14v-4c0-3.6-4.1-5.7-7-3.5l-3.2 2z"/><path fill="#ea4335" d="M11.7 21.6V8.5L24 17.8l12.3-9.3v13.1L24 30.9z"/><path fill="#c5221f" d="M1.5 10v4l10.2 7.6V8.5l-3.2-2C5.6 4.3 1.5 6.4 1.5 10z"/></svg><span lang="lo">ສົ່ງອີເມວ</span><span lang="en">Email Us</span><span lang="zh">发送邮件</span><span lang="th">ส่งอีเมลถึงเรา</span><span lang="vi">Gửi email cho chúng tôi</span></a></li>
+          <li><a href="mailto:phonesaibobs5@gmail.com"><img class="ic-img ic-inline ic-inline-lg" src="images/icons/email.png" width="17" height="17" alt="" decoding="async"><span lang="lo">ສົ່ງອີເມວ</span><span lang="en">Email Us</span><span lang="zh">发送邮件</span><span lang="th">ส่งอีเมลถึงเรา</span><span lang="vi">Gửi email cho chúng tôi</span></a></li>
         </ul>
 
       </div>
